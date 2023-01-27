@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Dragonterror's Roblox Extension",
+  "version": "0.0.0",
+  "description": "Roblox website addons!!",
+  "short_name": "DRE",
+  "incognito": "split",
+
+  "background": {
+    "service_worker": "Purchase.js"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["/js/plugin.js", "/lib/bottleneck.js"],
+      "matches": ["*://*.roblox.com/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.roblox.com/*"],
+      "run_at": "document_idle",
+      "css": ["/css/styles.css"],
+      "js": ["/js/inject.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Robacks",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "assets/icon.png"
+    }
+  },
+
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "Ruleset_1",
+        "enabled": true,
+        "path": "Ruleset.json"
+      }
+    ]
+  },
+
+  "host_permissions": [
+    "*://*.roblox.com/*", "*://*.rbxcdn.com/*"
+  ],
+
+  "permissions": [
+    "declarativeNetRequest",
+    "webRequest",
+    "storage"
+  ]
+}
