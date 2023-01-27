@@ -21,7 +21,7 @@
       "matches": ["*://*.roblox.com/*"],
       "run_at": "document_idle",
       "css": ["/css/styles.css"],
-      "js": ["/js/inject.js"]
+      "js": ["/js/inject.js", "/js/hello.js"]
     }
   ],
   "action": {
